@@ -37,7 +37,10 @@ public class LoginController {
 
     @FXML
     void handleLogin(ActionEvent event) {
-        accesLabel.setText("Login Effettuato");
+        if (username.getText().equals("PippoZord") && password.getText().equals("Basketlorenzo4!"))
+            accesLabel.setText("Ciao PippoZord");
+        else    
+            accesLabel.setText("ERRORE");
     }   
 
     @FXML
