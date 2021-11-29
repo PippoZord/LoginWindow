@@ -1,7 +1,11 @@
 package com.login;
 
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
+
+import com.google.common.hash.Hashing;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,7 +23,7 @@ public class LoginController {
     private URL location;
 
     @FXML
-    private Label accesLabel;
+    private Label accesLabel;   
 
     @FXML
     private Button loginButton;
@@ -37,10 +41,13 @@ public class LoginController {
 
     @FXML
     void handleLogin(ActionEvent event) {
-        if (username.getText().equals("PippoZord") && password.getText().equals("123!"))
+        if (username.getText().equals("PippoZord") && Hashing.sha256().hashString(password.getText(), StandardCharsets.UTF_8).toString().equals(
+                Hashing.sha256().hashString("123!", StandardCharsets.UTF_8).toString()))
             accesLabel.setText("Ciao PippoZord");
         else    
             accesLabel.setText("ERRORE");
+        System.out.println(Hashing.sha256().hashString("123!", StandardCharsets.UTF_8).toString());
+        System.out.println(Hashing.sha256().hashString(password.getText(), StandardCharsets.UTF_8).toString());
     }   
 
     @FXML

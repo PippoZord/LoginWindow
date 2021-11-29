@@ -52,7 +52,10 @@
                         <Insets left="60.0" top="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Label fx:id="accesLabel" alignment="CENTER" onDragDetected="#handleAccess" prefHeight="62.0" prefWidth="276.0" />
+                  <Label fx:id="accesLabel" alignment="CENTER" onDragDetected="#handleAccess" prefHeight="62.0" prefWidth="276.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
                </children>
             </HBox>
          </children>
