@@ -46,8 +46,6 @@ public class LoginController {
             accesLabel.setText("Ciao PippoZord");
         else    
             accesLabel.setText("ERRORE");
-        System.out.println(Hashing.sha256().hashString("123!", StandardCharsets.UTF_8).toString());
-        System.out.println(Hashing.sha256().hashString(password.getText(), StandardCharsets.UTF_8).toString());
     }   
 
     @FXML
